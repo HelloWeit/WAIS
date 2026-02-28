@@ -1,10 +1,10 @@
 # PAIOS - Personal AI Operating System
 
-> 通过结构化规则，把个人决策过程外显化，并通过 Agent 协同放大认知杠杆。
+> 通过结构化规则，把个人决策过程外显化，并通过 Agent Skills 放大认知杠杆。
 
 ## 项目概述
 
-PAIOS 是一个由 Agent 驱动的个人工作操作系统，结合 Obsidian 进行文件管理和可视化。
+PAIOS 是一个由 Agent Skills 驱动的个人工作操作系统，结合 Obsidian 进行文件管理和可视化。
 
 **核心定位：**
 - 个人认知组织系统
@@ -19,41 +19,45 @@ PAIOS 是一个由 Agent 驱动的个人工作操作系统，结合 Obsidian 进
 
 ```
 paios/
-├── vault/                          # Obsidian Vault 根目录
-│   ├── 00_Inbox/                   # 输入缓冲区（48h必须处理）
-│   ├── 10_Daily/                   # 每日文件
-│   │   └── YYYY/
-│   │       ├── YYYY-MM-DD_brief.md # Morning Brief
-│   │       ├── YYYY-MM-DD_plan.md  # 今日计划
-│   │       └── YYYY-MM-DD_review.md# 今日复盘
-│   ├── 20_Tasks/                   # 任务池（核心执行区）
-│   ├── 30_Projects/                # 项目容器
-│   ├── 40_Research/                # 研究输出
-│   ├── 50_Knowledge/               # 知识资产（无时间依赖）
-│   ├── 60_Resources/               # 素材池
-│   ├── 70_Strategy/                # 战略层
-│   ├── 80_Opportunities/           # 机会池
-│   ├── 90_Archive/                 # 历史沉淀
-│   └── 99_System/                  # 系统内核
-│       ├── templates/              # 文件模板
-│       ├── schemas/                # YAML Schema
-│       └── dashboards/             # Dataview 面板
-├── .skills/                        # Agent Skills
-│   ├── task/                       # 任务 Agent
-│   ├── status/                     # 状态 Agent
-│   ├── morning/                    # Morning Brief Agent
-│   ├── review/                     # 复盘 Agent
-│   ├── research/                   # 研究 Agent
-│   ├── knowledge/                  # 知识 Agent
-│   ├── strategy/                   # 战略 Agent
-│   ├── daily-start/                # 每日启动 Agent（组合命令）
-│   ├── ask/                        # 快速问答 Agent
-│   ├── brainstorm/                 # 头脑风暴 Agent
-│   ├── archive/                    # 归档 Agent
-│   └── project/                    # 项目创建 Agent
-├── README.md                       # 项目说明
-├── CLAUDE.md                       # Claude 指引文件
-└── content.md                      # 详细文档
+├── .claude/
+│   └── skills/                      # Agent Skills
+│       ├── ask/                     # 快速问答
+│       ├── archive/                 # 归档
+│       │   └── references/
+│       ├── brainstorm/              # 头脑风暴
+│       │   └── references/
+│       ├── daily-start/             # 每日启动
+│       │   └── references/
+│       ├── knowledge/               # 知识沉淀
+│       ├── morning/                 # 晨间简报
+│       │   └── references/
+│       ├── project/                 # 项目创建
+│       │   └── references/
+│       ├── research/                # 深度研究
+│       ├── review/                  # 每日复盘
+│       ├── status/                  # 状态管理
+│       │   └── references/
+│       ├── strategy/                # 战略判断
+│       └── task/                    # 任务创建
+│           └── references/
+├── 00_Inbox/                        # 输入缓冲区（48h必须处理）
+├── 10_Daily/                        # 每日文件
+│   └── YYYY/
+│       ├── YYYY-MM-DD_brief.md      # Morning Brief
+│       ├── YYYY-MM-DD_plan.md       # 今日计划
+│       └── YYYY-MM-DD_review.md     # 今日复盘
+├── 20_Tasks/                        # 任务池（核心执行区）
+├── 30_Projects/                     # 项目容器
+├── 40_Research/                     # 研究输出
+├── 50_Knowledge/                    # 知识资产（无时间依赖）
+├── 60_Resources/                    # 素材池
+├── 70_Strategy/                     # 战略层
+├── 80_Opportunities/                # 机会池
+├── 90_Archive/                      # 历史沉淀
+└── 99_System/                       # 系统内核
+    ├── templates/                   # 文件模板
+    ├── schemas/                     # YAML Schema
+    └── dashboards/                  # Dataview 面板
 ```
 
 ---
@@ -78,6 +82,7 @@ draft → active → blocked → done → archived
 | 任务 | `TASK_YYYYMMDD_短标题.md` | `TASK_20260228_首页设计.md` |
 | 研究 | `RESEARCH_主题_YYYYMMDD.md` | `RESEARCH_AI趋势_20260228.md` |
 | 知识 | `KNOWLEDGE_主题.md` | `KNOWLEDGE_决策模型.md` |
+| 想法 | `IDEA_YYYYMMDD_短标题.md` | `IDEA_20260228_新功能.md` |
 
 ### YAML 头部规范
 
@@ -86,63 +91,33 @@ draft → active → blocked → done → archived
 ```yaml
 ---
 type: task | project | research | brief | plan | review | knowledge | strategy | opportunity | idea
-status: draft | active | blocked | done | archived
+status: draft | active | blocked | done | archived | processed
 priority: P0 | P1 | P2
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 tags: []
-source: manual | agent | meeting | brief
+source: manual | agent | meeting | brief | brainstorm
 ---
 ```
 
 ---
 
-## Agent Skills
+## Agent Skills 速查
 
-### RSS 信息源
-
-```yaml
-ai:
-  - OpenAI:  https://openai.com/blog/rss
-  - Anthropic: https://www.anthropic.com/rss
-  - Google AI: https://ai.googleblog.com/feeds/posts/default
-  - Microsoft AI: https://blogs.microsoft.com/ai/feed/
-  - Meta AI: https://about.meta.com/rss/meta-ai/
-  - Apple AI: https://machinelearning.apple.com/rss
-  - AI Weekly: https://aiweekly.co/rss.xml
-  - Import AI: https://jack-clark.net/rss/
-  - Algorithm: https://www.technologyreview.com/feed/
-  - TLDR AI: https://bullrich.dev/tldr-rss/ai.rss
-  - The Rundown AI: https://rss.beehiiv.com/feeds/2R3C6Bt5wj.xml
-govtech: 
-  - 国务院: https://www.gov.cn/rss/gov.xml
-  - 国家政策法规: https://www.gov.cn/rss/gov.xml
-  - 陕西政策法规: 
-bigtech: 
-  - GitHub: https://github.com/github/roadmap/issues.atom
-  - AWS News: https://aws.amazon.com/new/feeds/current.xml
-  - Google: https://cloud.google.com/blog/rss
-  - Azure: https://azure.microsoft.com/updates/feed/
-  - Meta: https://engineering.fb.com/?format=RSS
-  - Netflix: https://netflixtechblog.com/feed
-```
-
-### 可用 Skills
-
-| Skill | 触发命令 | 职责 | 输出目录 |
-|-------|---------|------|---------|
+| Skill | 命令 | 职责 | 输出目录 |
+|-------|------|------|----------|
 | **daily-start** | `/daily-start` | 一键启动（简报+问答+计划） | `10_Daily/YYYY/` |
 | **task** | `/task` | 创建任务 | `20_Tasks/` |
 | **project** | `/project` | 想法→项目 | `30_Projects/` |
 | **status** | `/start` `/add` `/update` | 生成今日计划 | `10_Daily/YYYY/` |
-| **morning** | `/morning` | 生成 Morning Brief | `10_Daily/YYYY/` |
+| **morning** | `/morning` `/brief` | 生成晨间简报 | `10_Daily/YYYY/` |
 | **review** | `/review` | 复盘总结 | `10_Daily/YYYY/` |
 | **research** | `/research` | 深度研究 | `40_Research/` |
 | **knowledge** | `/knowledge` | 知识沉淀 | `50_Knowledge/` |
 | **strategy** | `/strategy` | 战略判断 | `70_Strategy/` |
-| **ask** | `/ask` | 快速问答（不创建文件） | 无 |
-| **brainstorm** | `/brainstorm` | 交互式头脑风暴 | 可选 |
-| **archive** | `/archive` | 归档完成任务/项目 | `90_Archive/` |
+| **brainstorm** | `/brainstorm` | 交互式头脑风暴 | `00_Inbox/` |
+| **archive** | `/archive` | 归档完成项目 | `90_Archive/` |
+| **ask** | `/ask` | 快速问答（无文件） | - |
 
 ### Agent 职责边界
 
@@ -155,6 +130,7 @@ bigtech:
 | Research | 深度分析 | 不抽象知识 |
 | Knowledge | 抽象模型 | 不写时间线 |
 | Review | 复盘总结 | 不新增任务 |
+| Brainstorm | 探索想法 | 必须输出到 Inbox |
 
 ---
 
@@ -165,7 +141,7 @@ bigtech:
      ↓
 Inbox（/brainstorm 输出到这里）
      ↓
-Morning Brief (/daily-start)
+Morning Brief (/daily-start 或 /morning)
      ↓
 Opportunity
      ↓
@@ -182,29 +158,6 @@ Knowledge (/knowledge)
 Review (/review)
 ```
 
-## 命令与工作流对应
-
-```
-入口命令（进入 Inbox 或直接创建）:
-  /brainstorm  → 00_Inbox/IDEA_*.md（模糊想法探索后保存）
-  /task        → 20_Tasks/TASK_*.md（直接创建任务）
-  /project     → 30_Projects/*.md（想法→项目）
-
-每日循环:
-  /daily-start → 10_Daily/*_brief + *_plan（简报+计划）
-  /review      → 10_Daily/*_review（复盘）
-
-知识沉淀:
-  /research    → 40_Research/*.md（深度研究）
-  /knowledge   → 50_Knowledge/*.md（抽象知识）
-
-清理:
-  /archive     → 90_Archive/（归档完成项）
-
-工作流外:
-  /ask         → 无文件（快速问答）
-```
-
 ---
 
 ## CLI 命令速查
@@ -212,23 +165,22 @@ Review (/review)
 ```bash
 # 🌅 每日启动（推荐）
 /daily-start
-/daily-start main:"完成核心功能"
+/daily-start focus:"架构评审" quick
 
 # 快速问答
 /ask 什么是任务生命周期?
 
-# 头脑风暴
-/brainstorm 我在考虑构建个人知识图谱
+# 头脑风暴（输出到 Inbox）
+/brainstorm 微服务架构拆分方案
 
 # 创建任务
-/task 完成首页设计
-/task from:brief 3 跟进AI动态中的机会点 priority:P0
+/task 完成首页设计 priority:P1
 
-# 启动项目（想法→项目）
+# 创建项目
 /project 构建习惯追踪应用
 /project 00_Inbox/MyIdea.md
 
-# 今日开工（单独使用）
+# 今日开工
 /start main:"完成核心功能"
 
 # 新增工作
@@ -240,7 +192,7 @@ Review (/review)
 # 复盘
 /review done:"完成了xxx" blocked:"卡在xxx"
 
-# 生成简报（单独使用）
+# 晨间简报
 /morning
 
 # 深度研究
@@ -253,25 +205,78 @@ Review (/review)
 /strategy context:"当前方向困惑"
 
 # 归档
-/archive          # 查看待归档项目
-/archive all      # 归档所有
+/archive
+/archive all
 ```
 
 ---
 
-## 模板路径
+## RSS 信息源
 
-所有模板位于 `vault/99_System/templates/`：
+### AI & Agent (TOP 10)
 
-- `task.md` - 任务模板
-- `project.md` - 项目模板
-- `brief.md` - Morning Brief 模板
-- `plan.md` - 今日计划模板
-- `review.md` - 复盘模板
-- `research.md` - 研究模板
-- `knowledge.md` - 知识模板
-- `opportunity.md` - 机会模板
-- `strategy.md` - 战略模板
+| 优先级 | 来源 | URL |
+|--------|------|-----|
+| P0 | OpenAI | https://openai.com/blog/rss |
+| P0 | Anthropic | https://www.anthropic.com/rss |
+| P0 | TLDR AI | https://bullrich.dev/tldr-rss/ai.rss |
+| P1 | The Rundown AI | https://rss.beehiiv.com/feeds/2R3C6Bt5wj.xml |
+| P1 | Google AI | https://ai.googleblog.com/feeds/posts/default |
+| P1 | Microsoft AI | https://blogs.microsoft.com/ai/feed/ |
+| P2 | Meta AI | https://about.meta.com/rss/meta-ai/ |
+| P2 | Apple AI | https://machinelearning.apple.com/rss |
+| P2 | AI Weekly | https://aiweekly.co/rss.xml |
+
+### GovTech (TOP 3)
+
+| 来源 | URL |
+|------|-----|
+| 国务院 | https://www.gov.cn/rss/gov.xml |
+
+### BigTech (TOP 5)
+
+| 优先级 | 来源 | URL |
+|--------|------|-----|
+| P1 | GitHub | https://github.com/github/roadmap/issues.atom |
+| P1 | AWS News | https://aws.amazon.com/new/feeds/current.xml |
+| P1 | Google Cloud | https://cloud.google.com/blog/rss |
+| P2 | Azure | https://azure.microsoft.com/updates/feed/ |
+| P2 | Meta Engineering | https://engineering.fb.com/?format=RSS |
+| P2 | Netflix Tech | https://netflixtechblog.com/feed |
+
+---
+
+## 模板与 Schema
+
+### 模板路径
+
+所有模板位于 `99_System/templates/`：
+
+| 模板 | 用途 |
+|------|------|
+| `task.md` | 任务模板 |
+| `project.md` | 项目模板 |
+| `brief.md` | 晨间简报模板 |
+| `plan.md` | 今日计划模板 |
+| `review.md` | 复盘模板 |
+| `research.md` | 研究模板 |
+| `knowledge.md` | 知识模板 |
+| `opportunity.md` | 机会模板 |
+| `strategy.md` | 战略模板 |
+| `idea.md` | 想法模板 |
+
+### Schema 路径
+
+所有 Schema 位于 `99_System/schemas/`：
+
+| Schema | 用途 |
+|--------|------|
+| `task.schema.yaml` | 任务 YAML 校验 |
+| `project.schema.yaml` | 项目 YAML 校验 |
+| `research.schema.yaml` | 研究 YAML 校验 |
+| `knowledge.schema.yaml` | 知识 YAML 校验 |
+| `daily.schema.yaml` | 每日文件校验 |
+| `idea.schema.yaml` | 想法 YAML 校验 |
 
 ---
 
@@ -289,6 +294,15 @@ Review (/review)
 - `99_System/dashboards/health.md` - 系统健康度
 - `99_System/dashboards/daily.md` - 每日视图
 
+### Dataview 查询示例
+
+```dataview
+TABLE status, priority, due
+FROM "20_Tasks"
+WHERE status = "active"
+SORT priority ASC
+```
+
 ---
 
 ## 系统健康指标
@@ -303,25 +317,34 @@ Review (/review)
 
 ---
 
-## 扩展指南
+## Skill 开发规范
 
-### 添加新 Agent Skill
+遵循 Anthropic 官方 Skill Building Guide：
 
-1. 在 `.skills/` 下创建新目录
-2. 创建 `prompt.md` 定义 Agent 行为
-3. 创建 `skill.md` 定义元数据
-4. 在 `vault/99_System/templates/` 添加对应模板
+### SKILL.md 结构
 
-### 添加新文件类型
+```yaml
+---
+name: skill-name                    # kebab-case
+description: WHAT + WHEN + 触发词   # 包含触发条件
+---
 
-1. 在 `vault/99_System/schemas/` 添加 YAML Schema
-2. 在 `vault/99_System/templates/` 添加模板
-3. 更新 README.md 和 CLAUDE.md
+# Skill Body
 
-### 版本规划
+## When to Use
+## Workflow
+## Template
+## Constraints
+```
 
-- **v2.0**: Dataview 自动统计、状态自动扫描
-- **v3.0**: MCP Agent 编排
+### 目录结构
+
+```
+skill-name/
+├── SKILL.md              # 核心指令（必须）
+└── references/           # 详细文档（可选）
+    └── workflow.md
+```
 
 ---
 
@@ -332,3 +355,4 @@ Review (/review)
 3. **研究必须沉淀为知识** - 删除时间依赖内容
 4. **每日必须闭环** - Morning → Plan → Execute → Review
 5. **系统负载受控** - 严格遵守 active ≤ 3 规则
+6. **所有想法先进入 Inbox** - 经过评估后再分类处理
