@@ -282,11 +282,15 @@ Review (/review)
 
 ## Obsidian 集成
 
-### 必装插件
+### 可选插件
 
-1. **Dataview** - 数据查询与统计
-2. **Templater** - 高级模板
-3. **Calendar** - 日历视图（推荐）
+以下插件用于增强 Obsidian 内的手动操作体验（Agent Skills 独立运行，不依赖这些插件）：
+
+| 插件 | 用途 |
+|------|------|
+| **Dataview** | 在 Obsidian 中动态查询任务/项目 |
+| **Templater** | 手动创建文件时使用模板 |
+| **Calendar** | 日历视图，快速导航每日笔记 |
 
 ### Dashboard 路径
 
