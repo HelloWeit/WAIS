@@ -1,0 +1,25 @@
+# PAIOS Daily Schema (brief/plan/review)
+type: object
+required:
+  - type
+  - status
+  - created
+  - updated
+properties:
+  type:
+    type: string
+    enum: [brief, plan, review]
+  status:
+    type: string
+    enum: [active, archived]
+    default: active
+  created:
+    type: string
+    format: date
+  updated:
+    type: string
+    format: date
+  tags:
+    type: array
+    items:
+      type: string

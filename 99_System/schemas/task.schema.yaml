@@ -1,0 +1,40 @@
+# PAIOS Task Schema
+type: object
+required:
+  - type
+  - status
+  - priority
+  - created
+  - updated
+properties:
+  type:
+    type: string
+    enum: [task]
+    const: task
+  status:
+    type: string
+    enum: [draft, active, blocked, done, archived]
+    default: draft
+  priority:
+    type: string
+    enum: [P0, P1, P2]
+    default: P1
+  created:
+    type: string
+    format: date
+  updated:
+    type: string
+    format: date
+  tags:
+    type: array
+    items:
+      type: string
+  source:
+    type: string
+    enum: [manual, brief, meeting, inbox, agent]
+    default: manual
+  project:
+    type: string
+  due:
+    type: string
+    format: date

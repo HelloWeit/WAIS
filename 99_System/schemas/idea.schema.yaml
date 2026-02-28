@@ -1,0 +1,21 @@
+# PAIOS Idea Schema
+type: object
+required:
+  - type
+  - status
+  - created
+properties:
+  type:
+    type: string
+    const: idea
+  status:
+    type: string
+    enum: [pending, processed]
+    default: pending
+  created:
+    type: string
+    format: date
+  source:
+    type: string
+    enum: [brainstorm, manual, meeting, inbox]
+    default: manual

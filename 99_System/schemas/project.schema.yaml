@@ -1,0 +1,30 @@
+# PAIOS Project Schema
+type: object
+required:
+  - type
+  - status
+  - created
+  - updated
+properties:
+  type:
+    type: string
+    const: project
+  status:
+    type: string
+    enum: [draft, active, paused, done, archived]
+    default: active
+  priority:
+    type: string
+    enum: [P0, P1, P2]
+  created:
+    type: string
+    format: date
+  updated:
+    type: string
+    format: date
+  tags:
+    type: array
+    items:
+      type: string
+  source:
+    type: string

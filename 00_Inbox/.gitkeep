@@ -1,0 +1,18 @@
+---
+type: inbox
+status: pending
+created: 2026-02-28
+updated: 2026-02-28
+tags: []
+---
+
+# 示例 Inbox 项目
+
+这是一个示例 Inbox 项目。
+
+**规则**: 48小时内必须处理
+
+处理方式：
+- 转为任务 → `/task`
+- 转为研究 → `/research`
+- 归档 → 标记 `status: processed`

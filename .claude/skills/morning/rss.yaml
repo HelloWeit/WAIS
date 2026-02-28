@@ -1,0 +1,133 @@
+# Morning Brief RSS Sources
+# RSS 信息源配置
+
+## 获取策略
+# - AI 分类取 TOP 10
+# - GovTech 分类取 TOP 3
+# - BigTech 分类取 TOP 5
+# - 优先级: P0 必看 > P1 推荐 > P2 可选
+
+ai:
+  # P0 - 必看（核心关注）
+  - name: OpenAI
+    url: https://openai.com/blog/rss
+    description: OpenAI 官方博客
+    priority: P0
+    enabled: true
+
+  - name: Anthropic
+    url: https://www.anthropic.com/rss
+    description: Anthropic 官方博客
+    priority: P0
+    enabled: true
+
+  - name: TLDR AI
+    url: https://bullrich.dev/tldr-rss/ai.rss
+    description: TLDR AI 摘要
+    priority: P0
+    enabled: true
+
+  # P1 - 推荐（高质量）
+  - name: The Rundown AI
+    url: https://rss.beehiiv.com/feeds/2R3C6Bt5wj.xml
+    description: The Rundown AI 通讯
+    priority: P1
+    enabled: true
+
+  - name: Google AI
+    url: https://ai.googleblog.com/feeds/posts/default
+    description: Google AI 研究博客
+    priority: P1
+    enabled: true
+
+  - name: Microsoft AI
+    url: https://blogs.microsoft.com/ai/feed/
+    description: Microsoft AI 博客
+    priority: P1
+    enabled: true
+
+  # P2 - 可选（扩展）
+  - name: Meta AI
+    url: https://about.meta.com/rss/meta-ai/
+    description: Meta AI 官方博客
+    priority: P2
+    enabled: true
+
+  - name: Apple AI
+    url: https://machinelearning.apple.com/rss
+    description: Apple 机器学习博客
+    priority: P2
+    enabled: true
+
+  - name: AI Weekly
+    url: https://aiweekly.co/rss.xml
+    description: AI 周刊
+    priority: P2
+    enabled: true
+
+  - name: Import AI
+    url: https://jack-clark.net/rss/
+    description: Import AI 新闻
+    priority: P2
+    enabled: false  # 默认关闭，按需开启
+
+  - name: Algorithm
+    url: https://www.technologyreview.com/feed/
+    description: MIT Technology Review
+    priority: P2
+    enabled: false  # 默认关闭，按需开启
+
+govtech:
+  - name: 国务院
+    url: https://www.gov.cn/rss/gov.xml
+    description: 中国国务院
+    priority: P1
+    enabled: true
+
+  - name: 国家政策法规
+    url: https://www.gov.cn/rss/gov.xml
+    description: 国家政策法规
+    priority: P1
+    enabled: true
+
+bigtech:
+  - name: GitHub
+    url: https://github.com/github/roadmap/issues.atom
+    description: GitHub Roadmap
+    priority: P1
+    enabled: true
+
+  - name: AWS News
+    url: https://aws.amazon.com/new/feeds/current.xml
+    description: AWS 新闻
+    priority: P1
+    enabled: true
+
+  - name: Google Cloud
+    url: https://cloud.google.com/blog/rss
+    description: Google Cloud 博客
+    priority: P1
+    enabled: true
+
+  - name: Azure
+    url: https://azure.microsoft.com/updates/feed/
+    description: Azure 更新
+    priority: P2
+    enabled: true
+
+  - name: Meta Engineering
+    url: https://engineering.fb.com/?format=RSS
+    description: Meta 工程博客
+    priority: P2
+    enabled: true
+
+  - name: Netflix Tech
+    url: https://netflixtechblog.com/feed
+    description: Netflix 技术博客
+    priority: P2
+    enabled: true
+
+# 配置说明
+# priority: P0/P1/P2 - 优先级
+# enabled: true/false - 是否启用
+# AI 取 TOP 10, GovTech 取 TOP 3, BigTech 取 TOP 5
