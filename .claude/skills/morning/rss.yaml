@@ -5,7 +5,12 @@
 # - AI 分类取 TOP 10
 # - GovTech 分类取 TOP 3
 # - BigTech 分类取 TOP 5
+# - 互联网资讯取 TOP 5（前端科技/电子硬件/手机应用）
+# - 奇思妙想取 TOP 3
+# - 技术团队与安全取 TOP 4
+# - 产品与架构取 TOP 2
 # - 优先级: P0 必看 > P1 推荐 > P2 可选
+# - 时间窗口: 仅过去 24 小时
 
 ai:
   # P0 - 必看（核心关注）
@@ -127,7 +132,99 @@ bigtech:
     priority: P2
     enabled: true
 
+internet_news:
+  - name: 36kr
+    url: https://rss.aishort.top/?type=36kr
+    description: 互联网资讯（前端科技/电子硬件/手机应用）
+    priority: P1
+    enabled: true
+
+  - name: 虎嗅网
+    url: https://rss.aishort.top/?type=huxiu
+    description: 科技商业与产业观察
+    priority: P1
+    enabled: true
+
+  - name: 艾瑞网
+    url: https://rss.aishort.top/?type=iresearch
+    description: 互联网研究与行业数据
+    priority: P1
+    enabled: true
+
+  - name: 爱范儿
+    url: https://rss.aishort.top/?type=AppSolution
+    description: 消费电子与移动应用
+    priority: P1
+    enabled: true
+
+  - name: 效率火箭
+    url: https://rss.aishort.top/?type=xlrocket
+    description: 效率工具与产品方法
+    priority: P2
+    enabled: true
+
+curiosity:
+  - name: 果壳网
+    url: https://rss.aishort.top/?type=guokr
+    description: 科普与趣味知识
+    priority: P2
+    enabled: true
+
+  - name: 少数派
+    url: https://rss.aishort.top/?type=sspai
+    description: 数字生活与工具实践
+    priority: P2
+    enabled: true
+
+  - name: 知乎想法热榜
+    url: https://rss.aishort.top/?type=zhihu
+    description: 热点观点与新奇话题
+    priority: P2
+    enabled: true
+
+tech_teams_security:
+  - name: 美团技术团队
+    url: https://tech.meituan.com/feed
+    description: 工程实践与平台技术
+    priority: P1
+    enabled: true
+
+  - name: 掘金专栏-字节跳动技术团队
+    url: https://rsshub.app/juejin/posts/1838039172387262
+    description: 字节跳动技术文章聚合
+    priority: P1
+    enabled: true
+
+  - name: 有赞技术团队
+    url: https://tech.youzan.com/rss/
+    description: 电商与业务中台技术实践
+    priority: P1
+    enabled: true
+
+  - name: 360 核心安全技术博客
+    url: https://blogs.360.net/rss.html
+    description: 安全攻防与安全工程
+    priority: P1
+    enabled: true
+
+product_architecture:
+  - name: 人人都是产品经理
+    url: https://plink.anyfeeder.com/weixin/woshipm
+    description: 产品方法与实践案例
+    priority: P2
+    enabled: true
+
+  - name: 架构师之路
+    url: https://plink.anyfeeder.com/weixin/gh_10a6b96351a9
+    description: 架构思维与工程管理
+    priority: P2
+    enabled: true
+
 # 配置说明
 # priority: P0/P1/P2 - 优先级
 # enabled: true/false - 是否启用
+# 时间过滤: 仅纳入过去 24 小时内发布内容
+# 抓取后按 URL 去重；同 URL 仅保留一条
 # AI 取 TOP 10, GovTech 取 TOP 3, BigTech 取 TOP 5
+# 互联网资讯取 TOP 5, 奇思妙想取 TOP 3
+# 技术团队与安全取 TOP 4, 产品与架构取 TOP 2

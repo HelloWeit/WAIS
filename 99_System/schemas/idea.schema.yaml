@@ -17,5 +17,5 @@ properties:
     format: date
   source:
     type: string
-    enum: [brainstorm, manual, meeting, inbox]
+    enum: [brainstorm, daily-start, manual, meeting, inbox]
     default: manual

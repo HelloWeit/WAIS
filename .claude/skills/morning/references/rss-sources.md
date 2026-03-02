@@ -11,6 +11,12 @@
 | **AI** | TOP 10 | P0 必看 > P1 推荐 > P2 可选 |
 | **GovTech** | TOP 3 | P1 |
 | **BigTech** | TOP 5 | P1 > P2 |
+| **互联网资讯** | TOP 5 | P1 > P2 |
+| **奇思妙想** | TOP 3 | P2 |
+| **技术团队与安全** | TOP 4 | P1 |
+| **产品与架构** | TOP 2 | P2 |
+
+时间窗口：仅抓取过去 24 小时内发布的内容。
 
 ## RSS 源配置（按优先级）
 
@@ -62,6 +68,40 @@
 | Meta Engineering | https://engineering.fb.com/?format=RSS |
 | Netflix Tech | https://netflixtechblog.com/feed |
 
+### 互联网资讯（5源，取 TOP 5）
+
+| 源 | 说明 |
+|---|------|
+| 36kr | https://rss.aishort.top/?type=36kr |
+| 虎嗅网 | https://rss.aishort.top/?type=huxiu |
+| 艾瑞网 | https://rss.aishort.top/?type=iresearch |
+| 爱范儿 | https://rss.aishort.top/?type=AppSolution |
+| 效率火箭 | https://rss.aishort.top/?type=xlrocket |
+
+### 奇思妙想（3源，取 TOP 3）
+
+| 源 | 说明 |
+|---|------|
+| 果壳网 | https://rss.aishort.top/?type=guokr |
+| 少数派 | https://rss.aishort.top/?type=sspai |
+| 知乎想法热榜 | https://rss.aishort.top/?type=zhihu |
+
+### 技术团队与安全（4源，取 TOP 4）
+
+| 源 | 说明 |
+|---|------|
+| 美团技术团队 | https://tech.meituan.com/feed |
+| 掘金专栏-字节跳动技术团队 | https://rsshub.app/juejin/posts/1838039172387262 |
+| 有赞技术团队 | https://tech.youzan.com/rss/ |
+| 360 核心安全技术博客 | https://blogs.360.net/rss.html |
+
+### 产品与架构（2源，取 TOP 2）
+
+| 源 | 说明 |
+|---|------|
+| 人人都是产品经理 | https://plink.anyfeeder.com/weixin/woshipm |
+| 架构师之路 | https://plink.anyfeeder.com/weixin/gh_10a6b96351a9 |
+
 ## 输出
 
 - `10_Daily/<YYYY>/YYYY-MM-DD_brief.md`
@@ -76,6 +116,7 @@
 - 结论式要点（不是摘要）
 - 可能影响（对架构/团队/平台）
 - 行动建议（1条）
+- 原文链接（可点击）
 
 ## 2) GovTech / 政务服务 (Top 3)
 - ...
@@ -83,17 +124,33 @@
 ## 3) Big Tech Moves (Top 5)
 - ...
 
-## 4) Opportunities（机会点池，最多5条）
+## 4) 互联网资讯 (Top 5)
+- ...
+
+## 5) 奇思妙想 (Top 3)
+- ...
+
+## 6) 技术团队与安全 (Top 4)
+- ...
+
+## 7) 产品与架构 (Top 2)
+- ...
+
+## 8) Opportunities（机会点池，最多5条）
 - OPP: ...（建议：转Inbox/转研究/暂存）
 
-## 5) Watchlist（持续关注）
+## 9) Watchlist（持续关注）
 - ...
 ```
 
 ## 约束
 
-- 输出必须是"结论+影响+行动建议"，不是新闻摘要
+- 输出必须是"结论+影响+行动建议+原文链接"，不是新闻摘要
 - AI 取 TOP 10，GovTech 取 TOP 3，BigTech 取 TOP 5
+- 互联网资讯取 TOP 5，奇思妙想取 TOP 3
+- 技术团队与安全取 TOP 4，产品与架构取 TOP 2
+- 仅纳入过去 24 小时内发布的内容
+- 抓取后按 URL 去重；同 URL 仅保留一条，避免重复摘要
 - Opportunities 最多 5 条，必须标注建议动作
 - **禁止**创建任务
 - **禁止**修改状态

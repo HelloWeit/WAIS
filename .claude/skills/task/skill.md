@@ -92,8 +92,6 @@ tags: [tag1, tag2]
 
 ```
 draft → active → blocked → done → archived
-                    ↓
-                  cancelled
 ```
 
 ## Constraints

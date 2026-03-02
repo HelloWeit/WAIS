@@ -233,6 +233,7 @@ Review (/review)
 | 来源 | URL |
 |------|-----|
 | 国务院 | https://www.gov.cn/rss/gov.xml |
+| 国家政策法规 | https://www.gov.cn/rss/gov.xml |
 
 ### BigTech (TOP 5)
 
