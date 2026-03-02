@@ -4,7 +4,7 @@
 
 ```dataview
 TABLE length(rows) as "Count"
-FROM "20_Tasks"
+FROM "30_Tasks"
 WHERE status = "active"
 GROUP BY true
 ```
@@ -15,7 +15,7 @@ GROUP BY true
 
 ```dataview
 LIST
-FROM "20_Tasks"
+FROM "30_Tasks"
 WHERE priority = "P0" AND status != "done" AND status != "archived"
 ```
 
@@ -25,7 +25,7 @@ WHERE priority = "P0" AND status != "done" AND status != "archived"
 
 ```dataview
 LIST
-FROM "20_Tasks"
+FROM "30_Tasks"
 WHERE status != "done" AND status != "archived"
   AND date(today) - file.mtime >= dur(7 days)
 SORT file.mtime ASC

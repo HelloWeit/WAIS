@@ -29,7 +29,7 @@ git clone https://github.com/HelloWeit/wais.git
 cd wais
 ```
 
-> **说明：** 克隆后目录结构已完整（00_Inbox, 10_Daily, 20_Tasks 等），无需额外初始化或创建目录。
+> **说明：** 克隆后目录结构已完整（00_Inbox, 10_Daily, 30_Tasks 等），无需额外初始化或创建目录。
 
 ### 2. 开始使用
 
@@ -77,8 +77,8 @@ wais/
 ├── 00_Inbox/                    # 想法缓冲区
 ├── 10_Daily/                    # 每日笔记
 │   └── YYYY/
-├── 20_Tasks/                    # 任务池
-├── 30_Projects/                 # 项目
+├── 30_Tasks/                    # 任务池
+├── 20_Projects/                 # 项目
 ├── 40_Research/                 # 研究
 ├── 50_Knowledge/                # 知识库
 ├── 60_Resources/                # 资源
@@ -99,8 +99,8 @@ wais/
 |------|------|------|
 | `/daily-start` | 一键启动（简报+问答+计划） | `10_Daily/` |
 | `/morning` | 晨间简报 | `10_Daily/` |
-| `/task` | 创建任务 | `20_Tasks/` |
-| `/project` | 创建项目 | `30_Projects/` |
+| `/task` | 创建任务 | `30_Tasks/` |
+| `/project` | 创建项目 | `20_Projects/` |
 | `/status` | 状态管理 | `10_Daily/` |
 | `/review` | 每日复盘 | `10_Daily/` |
 | `/research` | 深度研究 | `40_Research/` |

@@ -6,7 +6,7 @@ TABLE
   status as "Status",
   project as "Project",
   due as "Due"
-FROM "20_Tasks"
+FROM "30_Tasks"
 WHERE status != "archived"
 SORT priority ASC, due ASC
 ```
@@ -15,7 +15,7 @@ SORT priority ASC, due ASC
 
 ```dataview
 LIST
-FROM "20_Tasks"
+FROM "30_Tasks"
 WHERE status = "active"
 SORT priority ASC
 ```
@@ -24,7 +24,7 @@ SORT priority ASC
 
 ```dataview
 LIST
-FROM "20_Tasks"
+FROM "30_Tasks"
 WHERE status = "blocked"
 SORT updated DESC
 ```
@@ -33,7 +33,7 @@ SORT updated DESC
 
 ```dataview
 LIST
-FROM "20_Tasks"
+FROM "30_Tasks"
 WHERE status = "draft"
 SORT created DESC
 LIMIT 10

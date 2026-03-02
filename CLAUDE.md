@@ -47,8 +47,8 @@ wais/
 │       ├── YYYY-MM-DD_brief.md      # Morning Brief
 │       ├── YYYY-MM-DD_plan.md       # 今日计划
 │       └── YYYY-MM-DD_review.md     # 今日复盘
-├── 20_Tasks/                        # 任务池（核心执行区）
-├── 30_Projects/                     # 项目容器
+├── 30_Tasks/                        # 任务池（核心执行区）
+├── 20_Projects/                     # 项目容器
 ├── 40_Research/                     # 研究输出
 ├── 50_Knowledge/                    # 知识资产（无时间依赖）
 ├── 60_Resources/                    # 素材池
@@ -108,8 +108,8 @@ source: manual | agent | meeting | brief | brainstorm
 | Skill | 命令 | 职责 | 输出目录 |
 |-------|------|------|----------|
 | **daily-start** | `/daily-start` | 一键启动（简报+问答+计划） | `10_Daily/YYYY/` |
-| **task** | `/task` | 创建任务 | `20_Tasks/` |
-| **project** | `/project` | 想法→项目 | `30_Projects/` |
+| **task** | `/task` | 创建任务 | `30_Tasks/` |
+| **project** | `/project` | 想法→项目 | `20_Projects/` |
 | **status** | `/start` `/add` `/update` | 生成今日计划 | `10_Daily/YYYY/` |
 | **morning** | `/morning` `/brief` | 生成晨间简报 | `10_Daily/YYYY/` |
 | **review** | `/review` | 复盘总结 | `10_Daily/YYYY/` |
@@ -304,7 +304,7 @@ Review (/review)
 
 ```dataview
 TABLE status, priority, due
-FROM "20_Tasks"
+FROM "30_Tasks"
 WHERE status = "active"
 SORT priority ASC
 ```
