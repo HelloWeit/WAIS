@@ -1,15 +1,16 @@
-# PAIOS - Personal AI Operating System
+# PAIOS - Personal AI Workstation
 
-> 通过结构化规则，把个人决策过程外显化，并通过 Agent Skills 放大认知杠杆。
+> 一个结构化的个人工作环境，通过 Agent Skills 辅助日常任务管理、信息收集和知识沉淀。
 
 ## 项目概述
 
-PAIOS 是一个由 Agent Skills 驱动的个人工作操作系统，结合 Obsidian 进行文件管理和可视化。
+PAIOS 是一个由 Agent Skills 驱动的个人工作站，结合 Obsidian 进行文件管理和可视化。
 
-**核心定位：**
-- 个人认知组织系统
-- 决策控制中枢
-- 执行调度系统
+**它能帮你：**
+- 管理每日任务和项目
+- 收集和整理信息
+- 沉淀可复用的知识
+- 保持工作节奏（计划-执行-复盘）
 
 **它不是：** 笔记工具、ToDo 管理器、新闻聚合器
 
