@@ -1,4 +1,4 @@
-# WIS Schemas
+# WAIS Schemas
 
 存放 YAML Schema 定义。
 

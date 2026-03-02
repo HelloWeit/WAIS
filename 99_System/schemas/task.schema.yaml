@@ -1,4 +1,4 @@
-# WIS Task Schema
+# WAIS Task Schema
 type: object
 required:
   - type

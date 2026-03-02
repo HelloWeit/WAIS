@@ -1,10 +1,10 @@
-# WIS - Work Intelligence Station
+# WAIS - Work AI Station
 
 > 一个结构化的个人工作环境，通过 Agent Skills 辅助日常任务管理、信息收集和知识沉淀。
 
 ## 项目概述
 
-WIS 是一个由 Agent Skills 驱动的个人工作站，结合 Obsidian 进行文件管理和可视化。
+WAIS 是一个由 Agent Skills 驱动的个人工作站，结合 Obsidian 进行文件管理和可视化。
 
 **它能帮你：**
 - 管理每日任务和项目

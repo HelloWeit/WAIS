@@ -1,4 +1,4 @@
-# WIS Dashboards
+# WAIS Dashboards
 
 存放 Dataview 查询面板。
 

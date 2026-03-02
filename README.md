@@ -1,6 +1,6 @@
-# 🧠 WIS
+# 🧠 WAIS
 
-**Work Intelligence Station** - 个人 AI 工作站
+**Work AI Station** - 个人 AI 工作站
 
 [![GitHub](https://img.shields.io/badge/GitHub-HelloWeit/wis-blue)](https://github.com/HelloWeit/wis)
 
@@ -8,7 +8,7 @@
 
 ## 简介
 
-WIS 是一个由 Agent Skills 驱动的个人工作站，结合 Obsidian 进行文件管理和可视化。
+WAIS 是一个由 Agent Skills 驱动的个人工作站，结合 Obsidian 进行文件管理和可视化。
 
 **它能帮你：**
 - 管理每日任务和项目

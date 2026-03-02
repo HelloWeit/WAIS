@@ -1,4 +1,4 @@
-# WIS Research Schema
+# WAIS Research Schema
 type: object
 required:
   - type

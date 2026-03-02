@@ -1,4 +1,4 @@
-# WIS Dashboard - Daily View
+# WAIS Dashboard - Daily View
 
 ## Today's Plan
 

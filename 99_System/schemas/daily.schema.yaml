@@ -1,4 +1,4 @@
-# WIS Daily Schema (brief/plan/review)
+# WAIS Daily Schema (brief/plan/review)
 type: object
 required:
   - type

@@ -1,4 +1,4 @@
-# WIS Project Schema
+# WAIS Project Schema
 type: object
 required:
   - type

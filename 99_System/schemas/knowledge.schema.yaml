@@ -1,4 +1,4 @@
-# WIS Knowledge Schema
+# WAIS Knowledge Schema
 type: object
 required:
   - type

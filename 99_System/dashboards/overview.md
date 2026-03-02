@@ -1,4 +1,4 @@
-# WIS Dashboard - Task Overview
+# WAIS Dashboard - Task Overview
 
 ```dataview
 TABLE
