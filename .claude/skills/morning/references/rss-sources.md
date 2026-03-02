@@ -107,6 +107,8 @@
 - `10_Daily/<YYYY>/YYYY-MM-DD_brief.md`
 - 缓存：`60_Resources/Newsletters/YYYY-MM/YYYY-MM-DD-digest.md`
 
+缓存文件为必选输出，必须在 `/morning` 结束时落盘。
+
 ## 正文结构
 
 ```markdown
@@ -152,6 +154,7 @@
 - 技术团队与安全取 TOP 4，产品与架构取 TOP 2
 - 仅纳入过去 24 小时内发布的内容
 - 抓取后按 URL 去重；同 URL 仅保留一条，避免重复摘要
+- 必须创建/写入 `60_Resources/Newsletters/YYYY-MM/YYYY-MM-DD-digest.md`
 - Opportunities 最多 5 条，必须标注建议动作
 - **禁止**创建任务
 - **禁止**修改状态

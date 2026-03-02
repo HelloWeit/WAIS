@@ -35,7 +35,8 @@ Step 3: 生成今日计划 + 捕获想法到 Inbox
 
 检查 `60_Resources/Newsletters/YYYY-MM/YYYY-MM-DD-digest.md` 是否已存在：
 - 如存在且为今天：跳过获取，使用缓存
-- 如不存在：继续获取
+- 如不存在：继续获取并在完成后写入当天缓存文件
+- 若目录不存在：先创建 `60_Resources/Newsletters/YYYY-MM/`
 
 ### 1.2 RSS 信息源（按优先级获取）
 
@@ -257,7 +258,7 @@ category: strategy|tech|team|opportunity
 
 *技术/产品动态:*
 - [标题](原文链接) - [影响分析]
-→ 完整摘要: [[60_Resources/Newsletters/YYYY-MM-DD-digest]]
+→ 完整摘要: [[60_Resources/Newsletters/YYYY-MM/YYYY-MM-DD-digest]]
 
 ---
 
