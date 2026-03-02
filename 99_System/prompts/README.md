@@ -1,4 +1,4 @@
-# PAIOS Prompts
+# WIS Prompts
 
 存放 Agent Prompt 模板。
 

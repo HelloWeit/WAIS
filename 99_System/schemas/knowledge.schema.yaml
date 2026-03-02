@@ -1,4 +1,4 @@
-# PAIOS Knowledge Schema
+# WIS Knowledge Schema
 type: object
 required:
   - type

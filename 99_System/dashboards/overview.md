@@ -1,4 +1,4 @@
-# PAIOS Dashboard - Task Overview
+# WIS Dashboard - Task Overview
 
 ```dataview
 TABLE

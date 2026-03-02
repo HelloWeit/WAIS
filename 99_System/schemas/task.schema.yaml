@@ -1,4 +1,4 @@
-# PAIOS Task Schema
+# WIS Task Schema
 type: object
 required:
   - type

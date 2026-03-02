@@ -1,4 +1,4 @@
-# PAIOS Research Schema
+# WIS Research Schema
 type: object
 required:
   - type

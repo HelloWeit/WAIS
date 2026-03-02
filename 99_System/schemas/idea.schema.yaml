@@ -1,4 +1,4 @@
-# PAIOS Idea Schema
+# WIS Idea Schema
 type: object
 required:
   - type

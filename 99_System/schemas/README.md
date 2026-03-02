@@ -1,4 +1,4 @@
-# PAIOS Schemas
+# WIS Schemas
 
 存放 YAML Schema 定义。
 

@@ -1,4 +1,4 @@
-# PAIOS Project Schema
+# WIS Project Schema
 type: object
 required:
   - type

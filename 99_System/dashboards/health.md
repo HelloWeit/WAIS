@@ -1,4 +1,4 @@
-# PAIOS Dashboard - System Health
+# WIS Dashboard - System Health
 
 ## Active Task Count
 

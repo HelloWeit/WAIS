@@ -1,4 +1,4 @@
-# PAIOS Daily Schema (brief/plan/review)
+# WIS Daily Schema (brief/plan/review)
 type: object
 required:
   - type
