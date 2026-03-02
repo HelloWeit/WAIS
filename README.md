@@ -18,37 +18,21 @@ PAIOS 是一个由 Agent Skills 驱动的个人工作操作系统，结合 Obsid
 
 ## 快速开始
 
-### 1. 克隆仓库
+### 1. 获取项目
 
 ```bash
 git clone https://github.com/HelloWeit/paios.git
 cd paios
 ```
 
-### 2. 安装 Obsidian
+> **说明：** 克隆后目录结构已完整（00_Inbox, 10_Daily, 20_Tasks 等），无需额外初始化或创建目录。
 
-1. 下载 [Obsidian](https://obsidian.md/)
-2. 打开 Obsidian，选择「打开文件夹为仓库」
-3. 选择 `paios` 目录作为 Vault 根目录
+### 2. 开始使用
 
-### 3. 可选：安装 Obsidian 插件
-
-在 Obsidian 设置 → 第三方插件 中安装（用于增强 Obsidian 内的手动操作体验）：
-
-| 插件 | 用途 | 说明 |
-|------|------|------|
-| **Dataview** | 数据查询与统计 | 在 Obsidian 中动态查询任务/项目 |
-| **Templater** | 高级模板 | 手动创建文件时使用模板 |
-| **Calendar** | 日历视图 | 快速导航每日笔记 |
-
-> **注意：** Agent Skills 是独立运行的，不依赖这些插件。插件主要用于你在 Obsidian 中手动浏览和操作时增强体验。
-
-### 4. 开始使用
-
-在项目目录下使用 Claude Code：
+在项目目录下启动 Claude Code，即可使用 Agent Skills：
 
 ```bash
-# 每日启动
+# 每日启动（推荐首次使用）
 /daily-start
 
 # 创建任务
@@ -57,6 +41,26 @@ cd paios
 # 头脑风暴
 /brainstorm 微服务架构方案
 ```
+
+> **首次启动时：** Agent 会自动检测现有目录内容。如果目录已存在，直接扫描内容；如果目录不存在，才会创建。
+
+### 3. 可选：配置 Obsidian
+
+如需在 Obsidian 中可视化管理和浏览文件：
+
+1. 下载 [Obsidian](https://obsidian.md/)
+2. 打开 Obsidian，选择「打开文件夹为仓库」
+3. 选择 `paios` 目录
+
+**可选插件：**
+
+| 插件 | 用途 |
+|------|------|
+| Dataview | 动态查询任务/项目 |
+| Templater | 手动创建文件时使用模板 |
+| Calendar | 日历视图 |
+
+> **注意：** Agent Skills 完全独立运行，Obsidian 和插件都是可选的可视化增强工具。
 
 ---
 
