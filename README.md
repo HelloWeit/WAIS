@@ -2,7 +2,7 @@
 
 **Work AI Station** - 个人 AI 工作站
 
-[![GitHub](https://img.shields.io/badge/GitHub-HelloWeit/wis-blue)](https://github.com/HelloWeit/wis)
+[![GitHub](https://img.shields.io/badge/GitHub-HelloWeit/wais-blue)](https://github.com/HelloWeit/wais)
 
 ---
 
@@ -25,8 +25,8 @@ WAIS 是一个由 Agent Skills 驱动的个人工作站，结合 Obsidian 进行
 ### 1. 获取项目
 
 ```bash
-git clone https://github.com/HelloWeit/paios.git
-cd paios
+git clone https://github.com/HelloWeit/wais.git
+cd wais
 ```
 
 > **说明：** 克隆后目录结构已完整（00_Inbox, 10_Daily, 20_Tasks 等），无需额外初始化或创建目录。
@@ -54,7 +54,7 @@ cd paios
 
 1. 下载 [Obsidian](https://obsidian.md/)
 2. 打开 Obsidian，选择「打开文件夹为仓库」
-3. 选择 `paios` 目录
+3. 选择 `wais` 目录
 
 **可选插件：**
 
@@ -71,7 +71,7 @@ cd paios
 ## 目录结构
 
 ```
-paios/
+wais/
 ├── .claude/
 │   └── skills/                  # 12 个 Agent Skills
 ├── 00_Inbox/                    # 想法缓冲区

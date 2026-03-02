@@ -19,7 +19,7 @@ WAIS 是一个由 Agent Skills 驱动的个人工作站，结合 Obsidian 进行
 ## 目录结构
 
 ```
-paios/
+wais/
 ├── .claude/
 │   └── skills/                      # Agent Skills
 │       ├── ask/                     # 快速问答
