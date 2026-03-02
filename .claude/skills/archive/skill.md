@@ -17,8 +17,8 @@ description: 归档完成的任务、项目和已处理的 Inbox 项目，按年
 
 | Directory | Filter |
 |-----------|--------|
-| `20_Tasks/` | status: done |
-| `30_Projects/` | status: done |
+| `30_Tasks/` | status: done |
+| `20_Projects/` | status: done |
 | `00_Inbox/` | status: processed |
 
 ## Output Directories

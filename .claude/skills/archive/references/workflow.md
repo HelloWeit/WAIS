@@ -9,10 +9,10 @@
 ## Step 1: 识别待归档项目
 
 1. **搜索完成的任务：**
-   - 查找 `20_Tasks/` 中 `status: done` 的文件
+   - 查找 `30_Tasks/` 中 `status: done` 的文件
 
 2. **搜索完成的项目：**
-   - 查找 `30_Projects/` 中 `status: done` 的文件
+   - 查找 `20_Projects/` 中 `status: done` 的文件
 
 3. **搜索已处理的 Inbox 项目：**
    - 查找 `00_Inbox/` 中 `status: processed` 的文件

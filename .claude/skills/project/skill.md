@@ -22,10 +22,10 @@ description: 将想法或 Inbox 笔记转换为结构化的项目笔记，创建
 ## Output
 
 ```
-30_Projects/
+20_Projects/
 └── <ProjectName>.md
 
-20_Tasks/
+30_Tasks/
 └── TASK_*.md  (初始任务)
 ```
 
@@ -48,7 +48,7 @@ description: 将想法或 Inbox 笔记转换为结构化的项目笔记，创建
    - 创建初始任务
 
 5. **后续处理**
-   - 归档源 Inbox 文件（如适用）
+   - 归档源 Inbox 文件（如适用，移动后即从 Inbox 删除）
    - 更新相关链接
 
 ## C.A.P. Structure
@@ -98,3 +98,4 @@ strategy: [[STRATEGY_xxx]]
 - 使用 C.A.P. 结构组织
 - 项目通过 frontmatter 链接战略方向
 - 初始任务不超过 5 个
+- 若来源为 Inbox，必须完成归档并从 Inbox 移除原文件

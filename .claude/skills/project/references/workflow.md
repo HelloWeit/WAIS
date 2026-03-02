@@ -21,8 +21,8 @@
    - 如是内联：作为项目描述
 
 2. **搜索相关内容**
-   - 检查 `30_Projects/` 是否有类似项目
-   - 检查 `20_Tasks/` 是否有相关任务
+   - 检查 `20_Projects/` 是否有类似项目
+   - 检查 `30_Tasks/` 是否有相关任务
    - 检查 `40_Research/` 和 `50_Knowledge/` 避免重复
 
 3. **识别相关领域**
@@ -32,7 +32,7 @@
 
 ## Step 2: 创建项目计划
 
-在 `30_Projects/_plans/` 创建计划文件（如不存在则创建目录）：
+在 `20_Projects/_plans/` 创建计划文件（如不存在则创建目录）：
 
 ```markdown
 # 启动计划: [项目名称]
@@ -123,8 +123,8 @@ due: YYYY-MM-DD (or empty)
 
 ### 保存位置
 
-- 小型项目：`30_Projects/<ProjectName>.md`
-- 中/大型项目：`30_Projects/<ProjectName>/<ProjectName>.md`
+- 小型项目：`20_Projects/<ProjectName>.md`
+- 中/大型项目：`20_Projects/<ProjectName>/<ProjectName>.md`
 
 ---
 
@@ -136,9 +136,10 @@ due: YYYY-MM-DD (or empty)
 2. **归档 Inbox（如适用）**
    - 更新 frontmatter：`status: processed`, `archived: YYYY-MM-DD`
    - 移动到 `90_Archive/Inbox/YYYY/MM/`
+   - 移动后 `00_Inbox/` 不再保留原文件
 
 3. **创建初始任务**
-   - 在 `20_Tasks/` 创建项目相关任务
+   - 在 `30_Tasks/` 创建项目相关任务
 
 ---
 
@@ -147,7 +148,7 @@ due: YYYY-MM-DD (or empty)
 ```
 ## 项目创建完成
 
-**项目笔记:** [[ProjectName]] 位于 30_Projects/
+**项目笔记:** [[ProjectName]] 位于 20_Projects/
 **项目结构:** [结构说明]
 **收件箱归档:** [归档路径] (如适用)
 
