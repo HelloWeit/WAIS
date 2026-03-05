@@ -120,6 +120,17 @@ source: manual | agent | meeting | brief | brainstorm
 | **archive** | `/archive` | 归档完成项目 | `90_Archive/` |
 | **ask** | `/ask` | 快速问答（无文件） | - |
 
+### daily-start 执行规范（更新）
+
+- 问答顺序采用两阶段：
+  - 阶段 1：先连续完成 3 个主问题（主题 → 关键事项/任务 → 新输入/想法）
+  - 阶段 2：再统一追问细节（先追问任务，再追问想法/外部变化）
+- RSS 信息收集优先使用子代理：
+  - 子代理职责：RSS 抓取、去重、摘要、落盘 digest
+  - 主代理职责：读取 digest，完成问答、生成 brief/plan、落盘 Inbox
+  - 子代理失败时：主代理降级执行简化抓取，并在 brief 标注“RSS 部分降级”
+- 子代理禁止项：创建任务、修改状态、生成计划
+
 ### Agent 职责边界
 
 | Agent | 职责 | 禁止 |
